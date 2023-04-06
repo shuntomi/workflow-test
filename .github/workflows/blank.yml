@@ -22,7 +22,7 @@ jobs:
     if: >-
       ${{ 
         github.event_name == 'push' ||
-        ( github.event_name == 'workflow_dispatch' && contains(fromJSON(env.DISPATCH_PERMITTED_USER), github.actor) )
+        ( github.event_name == 'workflow_dispatch' && contains(fromJSON(github.env.DISPATCH_PERMITTED_USER), github.actor) )
       }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
