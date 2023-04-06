@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 env:
-  DISPATCH_PERMITTED_USER: ("shuntomi")
+  DISPATCH_PERMITTED_USER: '["shuntomi"]'
 
 jobs:
   build:
