@@ -18,7 +18,7 @@ jobs:
     # workflow_dispatchによる実行は特定のユーザーのみ許可する
     if: >-
       github.event_name == 'push' ||
-      ( github.event_name == 'workflow_dispatch' && contains($DISPATCH_PERMITTED_USER, github.actor) )
+      ( github.event_name == 'workflow_dispatch' && contains(github.env.DISPATCH_PERMITTED_USER, github.actor) )
     steps:
 #      - name: debug DISPATCH_PERMITTED_USER
 #        run: echo ${{ github.env.DISPATCH_PERMITTED_USER }}
