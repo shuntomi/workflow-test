@@ -22,8 +22,10 @@ jobs:
 #        ( github.event_name == 'workflow_dispatch' && contains(github.env.DISPATCH_PERMITTED_USER, github.actor) )
 #      }}
     steps:
-      - name: debug
-        run: echo ${{ github.actor }}
+      - name: debug DISPATCH_PERMITTED_USER
+        run: echo ${{ github.env.DISPATCH_PERMITTED_USER }}
+      - name: debug DISPATCH_PERMITTED_USER
+        run: echo ${{ contains(github.env.DISPATCH_PERMITTED_USER, github.actor) }}
 
       - uses: actions/checkout@v3
 
